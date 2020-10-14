@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0b08f2745253a5524fa369a39698df9a",
+    "revision": "00c64d96f63091e7d63608aa0cbc5dc2",
     "url": "/skills-depot/index.html"
   },
   {
-    "revision": "697f585ab2309decdd39",
+    "revision": "9b808f4d833af3d6957f",
     "url": "/skills-depot/static/css/main.cd4519b9.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/skills-depot/static/js/2.099ca957.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "697f585ab2309decdd39",
-    "url": "/skills-depot/static/js/main.8ccbd1e0.chunk.js"
+    "revision": "9b808f4d833af3d6957f",
+    "url": "/skills-depot/static/js/main.abaf2605.chunk.js"
   },
   {
     "revision": "5430d76714104e5eba1c",
