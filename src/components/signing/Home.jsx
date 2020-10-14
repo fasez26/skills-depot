@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
+import WithAuthRouter from '../../WithAuthRoute'
 import CardMedia from "@material-ui/core/CardMedia";
 import Signing from "./Signing";
 import "../../assets/styles/Styles.css";
@@ -35,6 +36,7 @@ function Home() {
   
   return (
     <div className="App container">
+      <WithAuthRouter />
       <Grid container>
         <Grid item xs={12}>
           <CardMedia
@@ -43,7 +45,7 @@ function Home() {
             title="Contemplative Reptile"
           />
           <Typography variant="h5" align="center" className={classes.textTitle}>
-            Wellcome!!
+            Welcome!!
           </Typography>
           <Typography
             variant="h6"

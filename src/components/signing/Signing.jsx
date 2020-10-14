@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { withRouter } from "react-router-dom";
 import { Typography } from "@material-ui/core";
@@ -10,7 +10,7 @@ import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import { auth, app } from "../firebase/Firebase";
+import { auth, app, db } from "../firebase/Firebase";
 import Button from "@material-ui/core/Button";
 import "../../assets/styles/Styles.css";
 
@@ -26,10 +26,46 @@ const useStyles = makeStyles((theme) => ({
 
 function Signing({ history }) {
   const classes = useStyles();
-  const [email, setEmail] = React.useState("");
-  const [pass, setPass] = React.useState("");
-  const [error, setError] = React.useState(null);
-  const [register, setRegister] = React.useState(true);
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
+  const [error, setError] = useState(null);
+  const [register, setRegister] = useState(true);
+
+  
+
+  const login = useCallback(() => {
+    auth
+      .signInWithEmailAndPassword(email, pass)
+      .then(() => {
+        setEmail("");
+        setPass("");
+        setError(null);
+        history.push("/Tasks");
+      })
+      .catch((error) => {
+        switch (error.code) {
+          case "auth/invalid-email":
+            setError("El formato del email es incorrecto");
+            break;
+          case "auth/weak-password":
+            setError("La contraseña debe ser de mínimo 6 caracteres");
+            break;
+          case "auth/email-already-in-use":
+            setError("Este email ya esta en uso");
+            break;
+          case "auth/wrong-password":
+            setError(
+              "La contraseña es incorrecta o el usuario no tiene password"
+            );
+            break;
+          case "auth/user-not-found":
+            setError("Usuario no encontrado");
+            break;
+          default:
+            return;
+        }
+      });
+  }, [email, pass, history]);
 
   useEffect(() => {
     if (app.auth().currentUser) {
@@ -37,54 +73,50 @@ function Signing({ history }) {
     }
   }, [app.auth().currentUser]);
 
-  const login = React.useCallback(async () => {
-    try {
-      const res = await auth.signInWithEmailAndPassword(email, pass);
-      setEmail("");
-      setPass("");
-      setError(null);
-      console.log("toy dentro");
-      history.push("/Tasks");
-    } catch (error) {
-      if (error.code === "auth/invalid-email") {
-        setError("Email no registrado");
+  const signUp = useCallback(async() => {
+    try{
+ 
+      const res = await auth.createUserWithEmailAndPassword(email, pass)
+      console.log(res)
+      await db.collection('users').doc(res.user.uid).set({
+          email: res.user.email,
+          uid: res.user.uid
+      })
+        
+        setEmail("");
+        setPass("");
+        setError(null);
+        // const uid = app.auth().currentUser.uid;
+        // const getUser = {
+        //   email: email,
+        //   userName: '',
+        //   uid: uid,
+        // }
+        // db.collection("user").add(getUser);
+        history.push("/Tasks");
+        console.log("Entraste");
+      } catch (error) {
+        switch (error.code) {
+          case "auth/invalid-email":
+            setError("El formato del email es incorrecto");
+            break;
+          case "auth/weak-password":
+            setError("La contraseña debe ser de mínimo 6 caracteres");
+            break;
+          case "auth/email-already-in-use":
+            setError("Este email ya esta en uso");
+            break;
+          case "auth/wrong-password":
+            setError("La contraseña es incorrecta o el usuario no tiene password");
+            break;
+          case "auth/user-not-found":
+            setError("Usuario no encontrado");
+            break;
+          default:
+            return;
       }
-      if (error.code === "auth/user-not-found") {
-        setError("Usuario no encontrado");
-      }
-      if (error.code === "auth/wrong-password") {
-        setError("Contraseña incorrecta");
-      }
-    }
-  }, [email, pass]);
-
-  const signUp = React.useCallback(async () => {
-    try {
-      const res = await auth.createUserWithEmailAndPassword(email, pass);
-      setEmail("");
-      setPass("");
-      setError(null);
-      console.log("toy dentro");
-      history.push("/Tasks");
-      //   props.history.push('/Personal')
-    } catch (error) {
-      if (error.code === "auth/invalid-email") {
-        setError("Email no valido");
-      }
-      if (error.code === "auth/user-not-found") {
-        setError("Usuario no encontrado");
-      }
-      if (error.code === "auth/wrong-password") {
-        setError("Contraseña incorrecta");
-      }
-      if (error.code === "auth/weak-password") {
-        setError("La contraseña debe ser de mínimo 6 caracteres");
-      }
-      if (error.code === "auth/email-already-in-us") {
-        setError("Email ya en existe");
-      }
-    }
-  }, [email, pass]);
+   }
+  });
 
   const signup = () => {
     console.log("registar");
