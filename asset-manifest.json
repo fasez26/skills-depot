@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/skills-depot/static/css/main.a53b65d1.chunk.css",
-    "main.js": "/skills-depot/static/js/main.97905f0b.chunk.js",
-    "main.js.map": "/skills-depot/static/js/main.97905f0b.chunk.js.map",
+    "main.js": "/skills-depot/static/js/main.ccbf2dc5.chunk.js",
+    "main.js.map": "/skills-depot/static/js/main.ccbf2dc5.chunk.js.map",
     "runtime-main.js": "/skills-depot/static/js/runtime-main.e8b7d394.js",
     "runtime-main.js.map": "/skills-depot/static/js/runtime-main.e8b7d394.js.map",
     "static/js/2.e17df168.chunk.js": "/skills-depot/static/js/2.e17df168.chunk.js",
     "static/js/2.e17df168.chunk.js.map": "/skills-depot/static/js/2.e17df168.chunk.js.map",
     "index.html": "/skills-depot/index.html",
-    "precache-manifest.afc011c0c81c581ca47900dd56acef96.js": "/skills-depot/precache-manifest.afc011c0c81c581ca47900dd56acef96.js",
+    "precache-manifest.c035b2a8a438a309687d1a085b94c0ee.js": "/skills-depot/precache-manifest.c035b2a8a438a309687d1a085b94c0ee.js",
     "service-worker.js": "/skills-depot/service-worker.js",
     "static/css/main.a53b65d1.chunk.css.map": "/skills-depot/static/css/main.a53b65d1.chunk.css.map",
     "static/js/2.e17df168.chunk.js.LICENSE.txt": "/skills-depot/static/js/2.e17df168.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.e8b7d394.js",
     "static/js/2.e17df168.chunk.js",
     "static/css/main.a53b65d1.chunk.css",
-    "static/js/main.97905f0b.chunk.js"
+    "static/js/main.ccbf2dc5.chunk.js"
   ]
 }
