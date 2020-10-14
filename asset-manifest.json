@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/skills-depot/static/css/main.a53b65d1.chunk.css",
-    "main.js": "/skills-depot/static/js/main.f74de1e8.chunk.js",
-    "main.js.map": "/skills-depot/static/js/main.f74de1e8.chunk.js.map",
+    "main.js": "/skills-depot/static/js/main.97905f0b.chunk.js",
+    "main.js.map": "/skills-depot/static/js/main.97905f0b.chunk.js.map",
     "runtime-main.js": "/skills-depot/static/js/runtime-main.e8b7d394.js",
     "runtime-main.js.map": "/skills-depot/static/js/runtime-main.e8b7d394.js.map",
-    "static/js/2.99d6bb27.chunk.js": "/skills-depot/static/js/2.99d6bb27.chunk.js",
-    "static/js/2.99d6bb27.chunk.js.map": "/skills-depot/static/js/2.99d6bb27.chunk.js.map",
+    "static/js/2.e17df168.chunk.js": "/skills-depot/static/js/2.e17df168.chunk.js",
+    "static/js/2.e17df168.chunk.js.map": "/skills-depot/static/js/2.e17df168.chunk.js.map",
     "index.html": "/skills-depot/index.html",
-    "precache-manifest.fb6bb2687bd50bc3911db37df85cb396.js": "/skills-depot/precache-manifest.fb6bb2687bd50bc3911db37df85cb396.js",
+    "precache-manifest.afc011c0c81c581ca47900dd56acef96.js": "/skills-depot/precache-manifest.afc011c0c81c581ca47900dd56acef96.js",
     "service-worker.js": "/skills-depot/service-worker.js",
     "static/css/main.a53b65d1.chunk.css.map": "/skills-depot/static/css/main.a53b65d1.chunk.css.map",
-    "static/js/2.99d6bb27.chunk.js.LICENSE.txt": "/skills-depot/static/js/2.99d6bb27.chunk.js.LICENSE.txt"
+    "static/js/2.e17df168.chunk.js.LICENSE.txt": "/skills-depot/static/js/2.e17df168.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.e8b7d394.js",
-    "static/js/2.99d6bb27.chunk.js",
+    "static/js/2.e17df168.chunk.js",
     "static/css/main.a53b65d1.chunk.css",
-    "static/js/main.f74de1e8.chunk.js"
+    "static/js/main.97905f0b.chunk.js"
   ]
 }

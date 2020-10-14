@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b78991a9bbd0776f972e8ccd45d26d26",
+    "revision": "d6a71cfd5b7c36386ff0f9d234d977fb",
     "url": "/skills-depot/index.html"
   },
   {
-    "revision": "c7e793bf8dda54b71a97",
+    "revision": "2a0aacce7e326805be7e",
     "url": "/skills-depot/static/css/main.a53b65d1.chunk.css"
   },
   {
-    "revision": "8b17b9c03c840ef11b30",
-    "url": "/skills-depot/static/js/2.99d6bb27.chunk.js"
+    "revision": "155983cfc8ce3fd79eab",
+    "url": "/skills-depot/static/js/2.e17df168.chunk.js"
   },
   {
     "revision": "4cd4bb82c3efd9af5440b12fb6d92f3f",
-    "url": "/skills-depot/static/js/2.99d6bb27.chunk.js.LICENSE.txt"
+    "url": "/skills-depot/static/js/2.e17df168.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c7e793bf8dda54b71a97",
-    "url": "/skills-depot/static/js/main.f74de1e8.chunk.js"
+    "revision": "2a0aacce7e326805be7e",
+    "url": "/skills-depot/static/js/main.97905f0b.chunk.js"
   },
   {
     "revision": "5430d76714104e5eba1c",
