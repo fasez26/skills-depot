@@ -71,16 +71,15 @@ function Tasks({ history, props }) {
   const classes = useStyles();
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
+  const [edit, setEdit] = useState(true)
+  const [id, setId] = useState('')
+
 
   useEffect(() => {
     const getData = async () => {
       try {
         const uid = app.auth().currentUser.uid;
-        // https://firebase.google.com/docs/firestore/query-data/get-data
-        // const data = await db.collection("user").doc(uid).get();
         const data = await db.collection("tasks").where("uid", "==", uid).get();
-        // const data = await db.collection("user").doc(uid).get().get();
-        // console.log('data',data.docs);
         const arrayData = data.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
@@ -94,7 +93,6 @@ function Tasks({ history, props }) {
     getData();
   }, []);
 
-  
   const addTask = () => {
     const newTasks = {
       name: newTask,
@@ -110,17 +108,56 @@ function Tasks({ history, props }) {
    
   };
 
+  const activeEditTask = (item) => {
+    setEdit(false)
+    setNewTask(item.name)
+    setId(item.id)
+   
+  }
+  console.log(id)
+  // const editTasks = async () => {
+   
+  
+  //   try {
+  //     // console.log(id)
+  //     const data = await db.collection("tasks").doc(id).update({
+  //       name: newTask,
+  //     })
+  //     console.log('aqui',data)
+  //     // const arrayEditado = tasks.map(item => (
+  //     //   item.id === id ? {id: item.id, date: item.date, name:  newTask} : item
+  //     // ))
+  //     // setTasks(arrayEditado)
+  //     // setEdit(true)
+  //     // setNewTask('')
+  //     // setId('')
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
+
+  const editTasks = () => {
+    
+    const data = {
+      name: newTask,
+    };
+  const conection = db.collection("tasks").doc(id).update(data);
+  console.log('aqui')
+  
+    // setTasks([...tasks, { ...newTasks, id: conection.id }]);
+    // setNewTask("");
+   
+  };
+
+  
+ 
+
   const logout = () => {
     auth.signOut().then(() => {
       history.push("/");
     });
   };
-  const openCourses = () => {
-    history.push("/courses");
-  };
-  const openInv = () => {
-    history.push("/HomeSI");
-  };
+  
   return (
     <div className="App container">
       {/* <WithAuthRoute /> */}
@@ -139,13 +176,23 @@ function Tasks({ history, props }) {
 
       <Grid container justify="center">
         <Grid item xs={10}>
-          <Typography
+          {
+            edit ?  <Typography
             variant="h6"
             align="left"
             className={classes.textTitleTask}
           >
             Add Task
+          </Typography>:  <Typography
+            variant="h6"
+            align="left"
+            className={classes.textTitleTask}
+           
+          >
+            Edit Task
           </Typography>
+          }
+         
 
           <Card
             classes={{
@@ -156,7 +203,9 @@ function Tasks({ history, props }) {
               <TextField id="filled-basic" label="Task" variant="filled" onChange={(e) => setNewTask(e.target.value)}
               value={newTask}/>
             </form>
-            <Button
+
+            {
+              edit ? <Button
               variant="contained"
               color="primary"
               size="large"
@@ -165,7 +214,18 @@ function Tasks({ history, props }) {
               
             >
               Add
-            </Button>
+            </Button> : <Button
+                  variant="contained"
+                  color="primary"
+                  size="large"
+                  className={classes.buttonEdit}
+                   onClick={editTasks}
+                  // onClick={activeEditTask(item)}
+                >
+                  Edit
+                </Button>
+            }
+            
           </Card>
         </Grid>
       </Grid>
@@ -186,10 +246,12 @@ function Tasks({ history, props }) {
             }}
           >
             {tasks.map((item) => (
+              
               <List
                 component="nav"
                 className={classes.root}
                 aria-label="contacts"
+              
               >
                 <ListItem button>
                   <ListItemIcon>
@@ -198,16 +260,16 @@ function Tasks({ history, props }) {
                   <ListItemText>{item.name} </ListItemText>
                   <ListItemText>{item.date.split(" ").pop()} </ListItemText>
                 </ListItem>
-                <Button
+                {/* <Button
                   variant="contained"
                   color="primary"
                   size="large"
                   className={classes.buttonEdit}
-                  // onClick={logout}
+                  onClick={() => activeEditTask(item)}
                 >
                   Edit
-                </Button>
-                <Button
+                </Button> */}
+                {/* <Button
                   variant="contained"
                   color="primary"
                   size="large"
@@ -215,7 +277,7 @@ function Tasks({ history, props }) {
                   // onClick={logout}
                 >
                   Delete
-                </Button>
+                </Button> */}
               </List>
 
               // <li className="list-group-item" key={item.id}>
