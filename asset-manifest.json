@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/skills-depot/static/css/main.cd4519b9.chunk.css",
-    "main.js": "/skills-depot/static/js/main.abaf2605.chunk.js",
-    "main.js.map": "/skills-depot/static/js/main.abaf2605.chunk.js.map",
+    "main.js": "/skills-depot/static/js/main.6613cb4a.chunk.js",
+    "main.js.map": "/skills-depot/static/js/main.6613cb4a.chunk.js.map",
     "runtime-main.js": "/skills-depot/static/js/runtime-main.e8b7d394.js",
     "runtime-main.js.map": "/skills-depot/static/js/runtime-main.e8b7d394.js.map",
-    "static/js/2.099ca957.chunk.js": "/skills-depot/static/js/2.099ca957.chunk.js",
-    "static/js/2.099ca957.chunk.js.map": "/skills-depot/static/js/2.099ca957.chunk.js.map",
+    "static/js/2.584257a0.chunk.js": "/skills-depot/static/js/2.584257a0.chunk.js",
+    "static/js/2.584257a0.chunk.js.map": "/skills-depot/static/js/2.584257a0.chunk.js.map",
     "index.html": "/skills-depot/index.html",
-    "precache-manifest.83e96a77f71ac82bfbcc58a5e2d38640.js": "/skills-depot/precache-manifest.83e96a77f71ac82bfbcc58a5e2d38640.js",
+    "precache-manifest.139022a9f660a7504eaeb23cc870e30f.js": "/skills-depot/precache-manifest.139022a9f660a7504eaeb23cc870e30f.js",
     "service-worker.js": "/skills-depot/service-worker.js",
     "static/css/main.cd4519b9.chunk.css.map": "/skills-depot/static/css/main.cd4519b9.chunk.css.map",
-    "static/js/2.099ca957.chunk.js.LICENSE.txt": "/skills-depot/static/js/2.099ca957.chunk.js.LICENSE.txt"
+    "static/js/2.584257a0.chunk.js.LICENSE.txt": "/skills-depot/static/js/2.584257a0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.e8b7d394.js",
-    "static/js/2.099ca957.chunk.js",
+    "static/js/2.584257a0.chunk.js",
     "static/css/main.cd4519b9.chunk.css",
-    "static/js/main.abaf2605.chunk.js"
+    "static/js/main.6613cb4a.chunk.js"
   ]
 }
