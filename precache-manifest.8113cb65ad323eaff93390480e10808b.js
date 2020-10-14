@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "045c9c2244cac1edc9f3a912c546a6b9",
+    "revision": "072fc920e128cb43e15e43dcd0f43095",
     "url": "/skills-depot/index.html"
   },
   {
