@@ -7,5 +7,4 @@ La web app se realizó con React, JavaSript, Material-UI y para base de datos Fi
 
 ## Web App
 
-[TrackTasks](https://fasez26.github.io/skills-depot/#/Tasks)
-
+[TrackTasks](https://fasez26.github.io/skills-depot/#)
